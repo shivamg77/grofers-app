@@ -14,11 +14,11 @@ import java.util.List;
  */
 public interface StoreService {
 
-    StoreEntity StoreByUUID(String StoreId) throws StoreNotFoundException;
+    StoreEntity storeByUUID(String StoreId) throws StoreNotFoundException;
 
-    List<StoreEntity> StoresByName(String StoreName) throws StoreNotFoundException;
+    List<StoreEntity> storesByName(String StoreName) throws StoreNotFoundException;
 
-    List<StoreEntity> StoresByRating();
+     List<StoreEntity> storesByRating();
 
-    List<StoreEntity> StoreByCategory(String categoryId) throws CategoryNotFoundException;
+    List<StoreEntity> storeByCategory(String categoryId) throws CategoryNotFoundException;
 }
