@@ -22,7 +22,7 @@ public class CategoryDaoImpl implements CategoryDao{
     private EntityManager entityManager;
 
     @Override
-    public CategoryEntity getCategoryById(String categoryId){
+    public  CategoryEntity getCategoryById(String categoryId){
         try {
             return entityManager.createNamedQuery("getCategoryById", CategoryEntity.class).setParameter("uuid", categoryId).getSingleResult();
         } catch (NoResultException nre) {
