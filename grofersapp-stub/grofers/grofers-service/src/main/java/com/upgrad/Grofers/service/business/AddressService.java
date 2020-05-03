@@ -1,7 +1,6 @@
 package com.upgrad.Grofers.service.business;
 
 
-
 import com.upgrad.Grofers.service.entity.AddressEntity;
 import com.upgrad.Grofers.service.entity.CustomerAddressEntity;
 import com.upgrad.Grofers.service.entity.CustomerEntity;
@@ -20,8 +19,12 @@ public interface AddressService {
 
     AddressEntity saveAddress(AddressEntity addressEntity, CustomerAddressEntity customerAddressEntity) throws
             SaveAddressException;
+
     AddressEntity getAddressByUUID(String addressId, CustomerEntity customerEntity) throws AuthorizationFailedException, AddressNotFoundException;
-    AddressEntity deleteAddress(AddressEntity addressEntity);
-    List<AddressEntity> getAllAddress(CustomerEntity customer);
-    StateEntity getStateByUUID(String uuid) throws AddressNotFoundException;
+
+    String deleteAddress(AddressEntity addressEntity, String authorization) throws AuthorizationFailedException;
+
+    List<CustomerAddressEntity> getAllAddress(CustomerEntity customer);
+
+    StateEntity getStateByUUID(String uuid) throws AddressNotFoundException, SaveAddressException;
 }
