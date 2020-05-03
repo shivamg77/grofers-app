@@ -1,4 +1,4 @@
-INSERT INTO CUSTOMER(uuid,firstname,lastname,email,contact_number,password,salt) VALUES('7d174a25-ba31-45a8-85b4-b06ffc9d5f8f','Upgrad','Grofers','grofer@upgrad.com','1111111111','95070049B59AFCD5A10135A810B10BBA9FC010028AA64C6574DDE85F6DC6008D','asdfrtgyhdfrrfbfg5ef45r34f4t');
+INSERT INTO customer(uuid,firstname,lastname,email,contact_number,password,salt) VALUES('7d174a25-ba31-45a8-85b4-b06ffc9d5f8f','Upgrad','Grofers','grofer@upgrad.com','1111111111','95070049B59AFCD5A10135A810B10BBA9FC010028AA64C6574DDE85F6DC6008D','asdfrtgyhdfrrfbfg5ef45r34f4t');
 
 INSERT INTO STATE(uuid,state_name) VALUES('aa174a25-ba31-45a8-85b4-b06ffc9d5f8f','Andaman and Nicobar Islands');
 INSERT INTO STATE(uuid,state_name) VALUES('c5c58cc3-3f30-4244-86db-ff4bfd2ea50b','Andhra Pradesh');
