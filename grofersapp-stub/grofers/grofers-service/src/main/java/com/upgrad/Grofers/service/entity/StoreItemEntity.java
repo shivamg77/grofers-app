@@ -8,11 +8,11 @@ import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
- * StoreItemEntity class contains all the attributes to be mapped to all the fields in store_item table in the database.
+ * StoreItemEntity class contains all the attributes to be mapped to all the fields in stores_item table in the database.
  * All the annotations which are used to specify all the constraints to the columns in the database must be correctly implemented.
  */
 @Entity
-@Table(name = "store_item")
+@Table(name = "stores_item")
 public class StoreItemEntity implements Serializable {
 
 	@Id

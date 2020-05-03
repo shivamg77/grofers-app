@@ -33,7 +33,7 @@ public class ItemEntity implements Serializable {
 
     @JsonIgnore
     @ManyToOne
-    @JoinTable(name = "store_item", joinColumns = @JoinColumn(name = "item_id"), inverseJoinColumns = @JoinColumn(name = "store_id"))
+    @JoinTable(name = "stores_item", joinColumns = @JoinColumn(name = "item_id"), inverseJoinColumns = @JoinColumn(name = "store_id"))
     private StoreEntity store;
 
     @JsonIgnore

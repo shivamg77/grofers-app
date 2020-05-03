@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * CustomerEntity class contains all the attributes to be mapped to all the fields in customer table in the database.
@@ -43,6 +44,21 @@ public class CustomerEntity implements Serializable {
 
     @Column(name = "salt",length = 200, nullable = false)
     private String salt;
+
+
+
+    public List<CustomerAddressEntity> getCustomerAddress() {
+        return customerAddressEntity;
+    }
+
+    public void setCustomerAddress(List<CustomerAddressEntity> customerAddressEntity) {
+        this.customerAddressEntity = customerAddressEntity;
+    }
+
+
+    @OneToMany(mappedBy = "customer")
+    private List<CustomerAddressEntity> customerAddressEntity;
+
 
     public CustomerEntity() {
     }

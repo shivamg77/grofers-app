@@ -25,16 +25,16 @@ public class AddressEntity implements Serializable {
     @Column(name = "UUID", length = 64, nullable = false)
     private String uuid;
 
-    @Column(name = "flat_buil_number", nullable = false)
+    @Column(name = "FLAT_BUIL_NUMBER", nullable = false)
     private String flatBuilNo;
 
-    @Column(nullable = false)
+    @Column(name = "LOCALITY", nullable = false)
     private String locality;
 
-    @Column(nullable = false)
+    @Column(name = "CITY", nullable = false)
     private String city;
 
-    @Column(nullable = false)
+    @Column(name = "PINCODE", nullable = false)
     private String pincode;
 
     @OneToOne
@@ -93,11 +93,11 @@ public class AddressEntity implements Serializable {
         this.city = city;
     }
 
-    public String getPincode() {
+    public String getPinCode() {
         return pincode;
     }
 
-    public void setPincode(String pincode) {
+    public void setPinCode(String pincode) {
         this.pincode = pincode;
     }
 
@@ -108,5 +108,7 @@ public class AddressEntity implements Serializable {
     public void setState(StateEntity state) {
         this.state = state;
     }
+
+
 
 }

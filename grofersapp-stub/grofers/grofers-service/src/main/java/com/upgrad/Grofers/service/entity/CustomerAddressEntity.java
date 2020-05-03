@@ -13,8 +13,11 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "customer_address")
-@NamedQuery(name = "userByAddress", query = "select a from CustomerAddressEntity a inner join a.address b where " +
-        "b.uuid = :uuid")
+        @NamedQuery(name = "userByAddress", query = "select a from CustomerAddressEntity a inner join a.address b where " +
+                "b.uuid = :uuid")
+
+
+
 public class CustomerAddressEntity implements Serializable {
 
 
