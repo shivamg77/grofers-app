@@ -36,13 +36,6 @@ public class CustomerDaoImpl implements CustomerDao {
         }
     }
 
-    public CustomerEntity getCustomerById(Integer id) {
-        try {
-            return entityManager.createNamedQuery("customerById", CustomerEntity.class).setParameter("id", id).getSingleResult();
-        } catch (NoResultException nre) {
-            return null;
-        }
-    }
 
     public CustomerAuthEntity createCustomerAuth(CustomerAuthEntity customerAuthEntity) {
         entityManager.persist(customerAuthEntity);
@@ -64,7 +57,16 @@ public class CustomerDaoImpl implements CustomerDao {
     }
 
     public CustomerEntity updateCustomer(CustomerEntity customerEntity) {
+
         return entityManager.merge(customerEntity);
     }
 
+    public CustomerEntity getCustomerById(final String uuid) {
+        try {
+            return entityManager.createNamedQuery("customerByCustomerId", CustomerEntity.class).setParameter("uuid", uuid).getSingleResult();
+        } catch (NoResultException nre) {
+            return null;
+        }
+    }
 }
+

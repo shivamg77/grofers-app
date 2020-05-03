@@ -21,16 +21,17 @@ public class StoreDaoImpl implements StoreDao{
     private EntityManager entityManager;
 
     @Override
-    public StoreEntity storeByUUID(String storeId) {
+    public  StoreEntity storeByUUID(String uuid) {
         try {
-            return entityManager.createNamedQuery("storesByUUID", StoreEntity.class).setParameter("uuid", storeId).getSingleResult();
+            return entityManager.createNamedQuery("storesByUUID", StoreEntity.class).setParameter
+                    ("uuid", uuid).getSingleResult();
         } catch (NoResultException nre) {
             return null;
         }
     }
 
     @Override
-    public List<StoreEntity> storeByName(String storeName) {
+    public  List<StoreEntity> storeByName(String storeName) {
         try {
             return entityManager.createNamedQuery("storesByName", StoreEntity.class).setParameter("storeName", storeName).getResultList();
         } catch (NoResultException nre) {

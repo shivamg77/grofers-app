@@ -54,15 +54,16 @@ public class AddressDaoImpl implements AddressDao{
     }
 
     @Override
-    public AddressEntity deleteAddress(AddressEntity addressEntity) {
+    public String deleteAddress(AddressEntity addressEntity) {
+        String Uuid = addressEntity.getUuid();
         entityManager.remove(addressEntity);
-        return addressEntity;
+        return Uuid;
     }
 
     @Override
     public List<AddressEntity> getAllAddress(CustomerEntity customer){
         try {
-            return entityManager.createNamedQuery("getAllAddress", AddressEntity.class).setParameter("customer", customer).getResultList();
+            return this.entityManager.createNamedQuery("allSavedAddresses", AddressEntity.class).getResultList();
         } catch (NoResultException nre) {
             return null;
         }
